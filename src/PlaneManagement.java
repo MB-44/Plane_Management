@@ -1,4 +1,5 @@
 import java.util.Scanner;
+import java.io.IOException;
 
 public class PlaneManagement {
     public static void main(String[] args) {
@@ -19,7 +20,10 @@ public class PlaneManagement {
     static int exit = 0;
     static int ticketCount = 0;
 
-    public static void showMenuOptions() {
+
+
+
+    public static void show_menu_options() {
         System.out.println(
                 """
                         1) Buy a seat
@@ -33,25 +37,25 @@ public class PlaneManagement {
                         """
         );
 
-        int option = getValidInput();
+        int option = get_valid_input();
         switch (option) {
             case 1:
-                buySeat();
+                buy_seat();
                 break;
             case 2:
-                cancelSeat();
+                cancel_seat();
                 break;
             case 3:
-                findFirstAvailableSeat();
+                find_first_available_seat();
                 break;
             case 4:
-                showSeatingPlan();
+                show_seating_plan();
                 break;
             case 5:
-                printTicketInfo();
+                print_ticket_info();
                 break;
             case 6:
-                searchTicket();
+                search_ticket();
                 break;
             case 0:
                 exit = 1;
@@ -59,14 +63,7 @@ public class PlaneManagement {
         }
     }
 
-    public static void buySeat() {}
-    public static void cancelSeat(){}
-    public static void findFirstAvailableSeat() {}
-    public static void showSeatingPlan() {}
-    public static void printTicketInfo() {}
-    public static void searchTicket() {}
-
-    public static int getValidInput() {
+    public static int get_valid_input() {
         int option = 0;
         try {
             System.out.print("Enter a option: ");
@@ -74,13 +71,33 @@ public class PlaneManagement {
 
             if (option < 0 || option > 6) {
                 System.err.println("Invalid option, Please Enter a option between 0 - 7");
-                showMenuOptions();
+                show_menu_options();
             }
         } catch (Exception event) {
-                scanner.nextLine();
-                System.err.println("Invalid type, please enter a number");
-                showMenuOptions();
-            }
-        return option;
+            scanner.nextLine();
+            System.err.println("Invalid type, please enter a number");
+            show_menu_options();
         }
+        return option;
+    }
+
+//    public static void buy_process(String row, int[])
+
+//    function for menu options
+    public static void buy_seat() {
+        System.out.print("Row letter: ");
+        String row = scanner.next().toUpperCase();
+
+        switch (row) {
+            case "A":
+
+        }
+    }
+    public static void cancel_seat(){}
+    public static void find_first_available_seat() {}
+    public static void show_seating_plan() {}
+    public static void print_ticket_info() {}
+    public static void search_ticket() {}
+
+
 }
