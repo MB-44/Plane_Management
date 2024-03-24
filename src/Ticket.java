@@ -32,7 +32,18 @@ public class Ticket {
         String seat = " Seat  : " + this.seat;
         String price = " Price  : " + this.price;
         String name = " Name  : " + person.get_name();
+        String surname ="Surname: " + person.get_surname();
         String email = " Email  : " + person.get_email();
+        int width = 40;
+
+        print_line(width);
+        print_text(row, width);
+        print_text(seat, width);
+        print_text(price, width);
+        print_text(name, width);
+        print_text(surname, width);
+        print_text(email, width);
+        print_line(width);
 
     }
 
